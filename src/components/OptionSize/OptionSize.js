@@ -25,6 +25,7 @@ const OptionSize = ({ sizes = [], currentSize, setCurrentSize }) => {
   );
 };
 
+
 OptionSize.propTypes = {
   sizes: PropTypes.arrayOf(PropTypes.object),
   currentSize: PropTypes.string,
