@@ -22,18 +22,18 @@ const getPrice = () => {
 };
 
 
-// const addToCart = (event) => {
-//   event.preventDefault();
-//   return (
-//     console.log ('Summary'),
-//     console.log('=========='),
-//     console.log ("Name:", props.title),
-//     console.log ("Price:", totalPrice),
-//     console.log ("Size:", currentSize),
-//     console.log ("Color:", currentColor)
+const addToCart = (event) => {
+  event.preventDefault();
+  return (
+    console.log ('Summary'),
+    console.log('=========='),
+    console.log ("Name:", props.title),
+    console.log ("Price:", ),
+    console.log ("Size:", currentSize),
+    console.log ("Color:", currentColor)
 
-//   )
-// }
+  )
+}
 
   const imageSrc = `${process.env.PUBLIC_URL}/images/products/shirt-${props.name}--${currentColor}.jpg`;
 
@@ -58,7 +58,7 @@ const getPrice = () => {
             <OptionColor colors={props.colors} currentColor={currentColor} setCurrentColor={setCurrentColor} />
             
         </div>
-          <Button className={styles.button}>
+          <Button onClick = {(event) => addToCart(event)} className={styles.button}>
             <span className="fa fa-shopping-cart" />
           </Button>
         </form>
