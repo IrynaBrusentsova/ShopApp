@@ -14,7 +14,7 @@ const Product = props => {
   const [currentColor, setCurrentColor] = useState(props.colors[0]);
   const [currentSize, setCurrentSize] = useState(props.sizes[0].name);
 
-//  const [currentPrice, setCurrentPrice] = useState(props.basePrice);
+
 
 const getPrice = () => {
   const foundSize = props.sizes.find (element => element.name === currentSize );
@@ -54,7 +54,6 @@ const addToCart = (event) => {
         <div className={styles.colors}>
            <OptionSize sizes={props.sizes} currentSize={currentSize} setCurrentSize={setCurrentSize} />
           <h3 className={styles.optionLabel}>Colors</h3>
-            {/* <OptionSize sizes={props.sizes} currentSize={currentSize} setCurrentSize={setCurrentSize} /> */}
             <OptionColor colors={props.colors} currentColor={currentColor} setCurrentColor={setCurrentColor} />
             
         </div>
