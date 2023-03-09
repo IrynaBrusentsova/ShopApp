@@ -14,7 +14,6 @@ const Product = props => {
   const [currentColor, setCurrentColor] = useState(props.colors[0]);
   const [currentSize, setCurrentSize] = useState(props.sizes[0].name);
 
-  //  const [price, setPrice] = useState (props.basePrice);
 
 
 
@@ -24,9 +23,9 @@ const getPrice = () => {
 };
 
 
-// useMemo(() => {
-//   getPrice();
-// }, [price, currentColor, currentSize]);
+useMemo(() => {
+  getPrice();
+}, [ currentColor, currentSize]);
 
 
 
