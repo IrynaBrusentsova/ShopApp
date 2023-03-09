@@ -1,12 +1,12 @@
 
 
 import styles from './Product.module.scss';
-
 import Button from '../Button/Button';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import OptionSize from '../OptionSize/OptionSize';
 import OptionColor from '../OptionColor/OptionColor';
 import PropTypes from 'prop-types';
+
 
 
 const Product = props => {
@@ -14,12 +14,21 @@ const Product = props => {
   const [currentColor, setCurrentColor] = useState(props.colors[0]);
   const [currentSize, setCurrentSize] = useState(props.sizes[0].name);
 
+  //  const [price, setPrice] = useState (props.basePrice);
+
 
 
 const getPrice = () => {
   const foundSize = props.sizes.find (element => element.name === currentSize );
   return (props.basePrice + foundSize.additionalPrice);
 };
+
+
+// useMemo(() => {
+//   getPrice();
+// }, [price, currentColor, currentSize]);
+
+
 
 
 const addToCart = (event) => {
@@ -37,8 +46,12 @@ const addToCart = (event) => {
 
   const imageSrc = `${process.env.PUBLIC_URL}/images/products/shirt-${props.name}--${currentColor}.jpg`;
 
+
+
+
   return (
     <article className={styles.product}>
+    
       <div className={styles.imageContainer}>
         <img 
           className={styles.image}
@@ -78,3 +91,5 @@ Product.propTypes = {
 
 export default Product;
 
+// ===
+// 

@@ -8,9 +8,12 @@ const Button = (props) => {
     return (<button type={props.type} onClick={props.onClick}  className={clsx(styles.button, props.className)}>{props.children}</button>);
 };
 
-Button.propTypes = {
-    children: PropTypes.any.isRequired,
-    className: PropTypes.string.isRequired,
+
+Button.propTypes ={
+    type: PropTypes.string,
+    onClick: PropTypes.func,
+    className: PropTypes.string,
+    children: PropTypes.node,
 }
 
 export default Button;
